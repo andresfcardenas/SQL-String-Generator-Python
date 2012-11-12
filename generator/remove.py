@@ -9,6 +9,6 @@ instructions = (
 )
 
 def delete():
-    """This method represent the delete instruction.
+    """This function represent the delete instruction.
     """
     pass

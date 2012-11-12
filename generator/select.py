@@ -9,23 +9,24 @@ instructions = (
 )
 
 def select(table_name, columns=None, table_esp=None, sign=None, value=None):
-    """This method represent the select instruction.
+    """This function represent the select instruction.
     """
-
-    if type(columns) == type(None):
+    if type(columns) != type(None) and type(columns) != type([]):
+        raise NameError('Data structure invalid, only list type.')
+    elif type(columns) == type(None):
         return '{0} * {1} {2}'.format(
             instructions[0],
             instructions[2],
             table_name
         )
-    elif type(columns) == type(''):
-        pass
-    elif type(columns) == type([]):
-        columns = ', '.join(columns)
-    else:
-        raise NameError('Data structure invalid, only string or list type')
 
-    if value != None:
+    try:
+        columns = ', '.join(columns)
+    except:
+        raise NameError('Column name should be str type.')
+
+    # table_esp dependa on value vice versa
+    if table_esp != None and value != None:
         if sign == None:
             sign = '='
 

@@ -9,6 +9,6 @@ instructions = (
 )
 
 def insert():
-    """This method represent the insert instruction.
+    """This function represent the insert instruction.
     """
     pass

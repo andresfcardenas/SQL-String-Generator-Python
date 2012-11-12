@@ -9,6 +9,6 @@ instructions = (
 )
 
 def update():
-    """This method represent the update instruction.
+    """This function represent the update instruction.
     """
     pass
