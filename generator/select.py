@@ -7,14 +7,15 @@ instructions = ('SELECT', 'WHERE', 'FROM',)
 def select(table_name, columns=None, table_esp=None, sign='=', value=None):
     """This function represent the select instruction.
     """
-    if type(columns) != type([]):
-        raise NameError('Data structure invalid, only list type.')
-    elif type(columns) == type(None):
+    if type(columns) == type(None):
         return '{0} * {1} {2}'.format(
             instructions[0],
             instructions[2],
             table_name
         )
+
+    if type(columns) != type([]):
+        raise NameError('Data structure invalid, only list type.')
 
     try:
         columns = ', '.join(columns)
