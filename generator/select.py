@@ -2,16 +2,12 @@
 # -*- coding: utf-8 -*-
 # Author: Andres F. Cardenas (Andrewnix)
 # Email: akardenasjimenez@gmail.com
-instructions = (
-    'SELECT',
-    'WHERE',
-    'FROM',
-)
+instructions = ('SELECT', 'WHERE', 'FROM',)
 
 def select(table_name, columns=None, table_esp=None, sign=None, value=None):
     """This function represent the select instruction.
     """
-    if type(columns) != type(None) and type(columns) != type([]):
+    if type(columns) != type([]):
         raise NameError('Data structure invalid, only list type.')
     elif type(columns) == type(None):
         return '{0} * {1} {2}'.format(
@@ -27,8 +23,7 @@ def select(table_name, columns=None, table_esp=None, sign=None, value=None):
 
     # table_esp dependa on value vice versa
     if table_esp != None and value != None:
-        if sign == None:
-            sign = '='
+        if sign == None: sign = '='
 
         return '{0} {1} {2} {3} {4} {5}{6}{7}'.format(
             instructions[0],
