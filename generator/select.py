@@ -4,7 +4,7 @@
 # Email: akardenasjimenez@gmail.com
 instructions = ('SELECT', 'WHERE', 'FROM',)
 
-def select(table_name, columns=None, table_esp=None, sign=None, value=None):
+def select(table_name, columns=None, table_esp=None, sign='=', value=None):
     """This function represent the select instruction.
     """
     if type(columns) != type([]):
@@ -23,8 +23,6 @@ def select(table_name, columns=None, table_esp=None, sign=None, value=None):
 
     # table_esp dependa on value vice versa
     if table_esp != None and value != None:
-        if sign == None: sign = '='
-
         return '{0} {1} {2} {3} {4} {5}{6}{7}'.format(
             instructions[0],
             columns,
