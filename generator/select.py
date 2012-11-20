@@ -15,12 +15,12 @@ def select(table_name, columns=None, table_esp=None, sign='=', value=None):
         )
 
     if type(columns) != type([]):
-        raise NameError('Data structure invalid, only list type.')
+        return 'ERROR: Data structure invalid, only list type.'
 
     try:
         columns = ', '.join(columns)
-    except:
-        raise NameError('Column name should be str type.')
+    except TypeError as te:
+        return 'ERROR: Column name should be str type: {0}'.format(te)
 
     # table_esp dependa on value vice versa
     if table_esp != None and value != None:
