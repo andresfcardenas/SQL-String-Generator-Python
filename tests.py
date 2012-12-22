@@ -28,5 +28,11 @@ class SelectTestCase(unittest.TestCase):
             'SELECT * FROM Test2'
         )
 
+    def tearDown(self):
+        del self.l1
+        del self.l2
+        del self.s1
+        del self.s2
+
 if __name__ == '__main__':
     unittest.main()
