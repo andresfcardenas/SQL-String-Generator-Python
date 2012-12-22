@@ -2,12 +2,16 @@
 # -*- coding: utf-8 -*-
 # Author: Andres F. Cardenas (Andrewnix)
 # Email: akardenasjimenez@gmail.com
-instructions = ('SELECT', 'WHERE', 'FROM',)
+instructions = (
+    'SELECT',
+    'WHERE',
+    'FROM',
+)
 
 def select(table_name, columns=None, table_esp=None, sign='=', value=None):
     """This function represent the select instruction.
     """
-    if isinstance(columns, type(None)):
+    if isinstance(columns, type(None)) is True:
         return '{0} * {1} {2}'.format(
             instructions[0],
             instructions[2],
