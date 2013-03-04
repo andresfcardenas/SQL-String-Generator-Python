@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Author: Andres F. Cardenas (Andrewnix)
+# Author: Andres F. Cardenas
 # Email: akardenasjimenez@gmail.com
 import unittest
 from generator import select
